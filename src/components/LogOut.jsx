@@ -26,15 +26,13 @@ const LogOut = () => {
   
         const cookieValue = getCookie('TokenJWT');
 
-        const response = await fetch(`http://localhost:8081/api/sessions/logout?cookie=${cookieValue}`, {
+        const response = await fetch(`https://9ae0-18-191-97-85.ngrok-free.app/api/sessions/logout?cookie=${cookieValue}`, {
           method: 'POST'
         })
         if(response.ok) {
           const expirationDate = new Date(0);
-          const cookieHttp = `TokenJWT=${cookieValue}; expires=${expirationDate.toUTCString()}`;
-          const cookieHttps = `TokenJWT=${cookieValue}; domain="https://g9s2wrzd-5173.brs.devtunnels.ms" expires=${expirationDate.toUTCString()}`;
-          document.cookie = cookieHttp;
-          document.cookie = cookieHttps;
+          const cookieJWT = `TokenJWT=${cookieValue}; expires=${expirationDate.toUTCString()}`;
+          document.cookie = cookieJWT;
           logout();
           toast('Gracias por visitar nuestra página', {
               position: "top-right",

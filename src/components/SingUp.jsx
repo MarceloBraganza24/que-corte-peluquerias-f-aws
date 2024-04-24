@@ -24,7 +24,7 @@ const SingUp = () => {
                     theme: "dark",
                 });
             } else {
-                const response = await fetch('http://localhost:8081/api/sessions/singUp', {
+                const response = await fetch('https://9ae0-18-191-97-85.ngrok-free.app/api/sessions/singUp', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json'

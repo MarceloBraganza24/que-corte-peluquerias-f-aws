@@ -24,7 +24,7 @@ const Login = () => {
                     theme: "dark",
                 });
             } else {
-                const response = await fetch('http://localhost:8081/api/sessions/login', {
+                const response = await fetch('https://9ae0-18-191-97-85.ngrok-free.app/api/sessions/login', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json'
@@ -35,10 +35,8 @@ const Login = () => {
                 const tokenJWT = data.data;
                 const expirationDate = new Date();
                 expirationDate.setDate(expirationDate.getDate() + 1);
-                const cookieHttp = `TokenJWT=${tokenJWT}; expires=${expirationDate.toUTCString()}`;
-                const cookieHttps = `TokenJWT=${tokenJWT}; domain="https://g9s2wrzd-5173.brs.devtunnels.ms"; port="5173"; expires=${expirationDate.toUTCString()}`;
-                document.cookie = cookieHttp;
-                document.cookie = cookieHttps;
+                const cookieJWT = `TokenJWT=${tokenJWT}; expires=${expirationDate.toUTCString()}`;
+                document.cookie = cookieJWT;
                 if (response.ok) {
                     navigate("/");
                     toast('Bienvenido, has iniciado sesion con éxito!', {

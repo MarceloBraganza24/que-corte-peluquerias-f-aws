@@ -31,17 +31,7 @@ const Home = () => {
     } else {
       logout()
     }
-    //mountHome(cookieValue);
-    
   }, []);
-
-  /* const mountHome = (cookie) => {
-    if(cookie) {
-      login()
-    } else {
-      logout()
-    }
-  } */
 
   return (
     <>

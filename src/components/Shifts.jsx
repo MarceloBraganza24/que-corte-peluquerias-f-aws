@@ -43,16 +43,7 @@ const Shifts = () => {
           } else {
             logout()
           }
-        //mountHome(cookieValue);
     }, []);
-
-    /* const mountHome = (cookie) => {
-        if(cookie) {
-          login()
-        } else {
-          logout()
-        }
-    } */
 
     const pagarTurno = async () => {
         try {
@@ -78,7 +69,7 @@ const Shifts = () => {
                 });
             } else {
                 pagarTurnoBtn.style.display = 'none';
-                const preference = await fetch('http://localhost:8081/api/payments/create-preference-shift', {
+                const preference = await fetch('https://9ae0-18-191-97-85.ngrok-free.app/api/payments/create-preference-shift', {
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json'
